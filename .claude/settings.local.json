@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(website-design)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npx playwright:*)",
+      "Bash(ls:*)",
+      "Bash(curl:*)",
+      "Bash(for img in PXL_20241202_053536894.MP~2.jpg PXL_20250223_011424516.jpg PXL_20250302_230741221.jpg)",
+      "Bash(do curl -s -o /dev/null -w \"%{http_code} $img\\\\n\" \"http://localhost:4323/images/$img\")",
+      "Bash(done)"
+    ]
+  }
+}
