@@ -1,9 +1,11 @@
 ---
 // Wedding Website for Kerry & Angie
 const weddingDate = "Saturday, June 27th, 2026";
-const weddingTime = "4:00 PM";
-const venueName = "The Oakland Grove";
-const venueAddress = "3630 Telegraph Ave, Oakland, CA 94609";
+const ceremonyTime = "3:30 PM";
+const ceremonyVenue = "Morcom Gardens";
+const ceremonyAddress = "700 Jean St, Oakland, CA 94610";
+const receptionVenue = "The Oakland Grove";
+const receptionAddress = "3630 Telegraph Ave, Oakland, CA 94609";
 
 // Photo gallery - all images from the images folder
 const photos = [
@@ -35,7 +37,7 @@ const heroImage = photos[0];
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kerry and Angie are getting married! Join us on June 27th, 2026 at The Oakland Grove in Oakland, CA." />
+  <meta name="description" content="Kerry and Angie are getting married! Join us on June 27th, 2026 in Oakland, CA." />
   <title>Kerry & Angie | June 27, 2026</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
@@ -55,6 +57,8 @@ const heroImage = photos[0];
         <li><a href="#details">Details</a></li>
         <li><a href="#schedule">Schedule</a></li>
         <li><a href="#photos">Photos</a></li>
+        <li><a href="#attire">Attire</a></li>
+        <li><a href="#gifts">Gifts</a></li>
         <li><a href="#rsvp">RSVP</a></li>
       </ul>
     </div>
@@ -72,7 +76,7 @@ const heroImage = photos[0];
       <div class="hero-date">
         <time datetime="2026-06-27">{weddingDate}</time>
       </div>
-      <div class="hero-location">{venueName} • Oakland, CA</div>
+      <div class="hero-location">Oakland, California</div>
       <a href="#rsvp" class="hero-cta">RSVP Now</a>
     </div>
     <div class="scroll-indicator" aria-hidden="true">
@@ -100,6 +104,8 @@ const heroImage = photos[0];
     <div class="container">
       <h2 class="section-title">Wedding Details</h2>
       <div class="details-grid">
+
+        <!-- Date Card -->
         <div class="detail-card">
           <div class="detail-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -112,34 +118,46 @@ const heroImage = photos[0];
           <h3 class="detail-title">Date</h3>
           <p class="detail-text"><time datetime="2026-06-27">{weddingDate}</time></p>
         </div>
-        <div class="detail-card">
+
+        <!-- Ceremony Card -->
+        <div class="detail-card detail-card--ceremony">
+          <div class="detail-badge">Ceremony</div>
           <div class="detail-icon">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
+              <path d="M12 2L9 7H3l5 4-2 6 6-4 6 4-2-6 5-4h-6z"/>
             </svg>
           </div>
-          <h3 class="detail-title">Time</h3>
-          <p class="detail-text">{weddingTime}</p>
-          <p class="detail-subtext">Ceremony begins promptly</p>
-        </div>
-        <div class="detail-card">
-          <div class="detail-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-          </div>
-          <h3 class="detail-title">Venue</h3>
-          <p class="detail-text">{venueName}</p>
-          <p class="detail-subtext">{venueAddress}</p>
-          <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueAddress)}`}
+          <h3 class="detail-title">{ceremonyVenue}</h3>
+          <p class="detail-text ceremony-time">{ceremonyTime}</p>
+          <p class="detail-subtext">{ceremonyAddress}</p>
+          <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ceremonyAddress)}`}
              class="detail-link"
              target="_blank"
              rel="noopener noreferrer">
             Get Directions →
           </a>
         </div>
+
+        <!-- Reception Card -->
+        <div class="detail-card detail-card--reception">
+          <div class="detail-badge detail-badge--blue">Reception</div>
+          <div class="detail-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <h3 class="detail-title">{receptionVenue}</h3>
+          <p class="detail-text">Following the ceremony</p>
+          <p class="detail-subtext">{receptionAddress}</p>
+          <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(receptionAddress)}`}
+             class="detail-link"
+             target="_blank"
+             rel="noopener noreferrer">
+            Get Directions →
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -151,16 +169,18 @@ const heroImage = photos[0];
       <p class="section-subtitle">A timeline of our special day</p>
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-time">4:00 PM</div>
+          <div class="timeline-time">3:30 PM</div>
           <div class="timeline-content">
             <h3 class="timeline-title">Ceremony</h3>
-            <p class="timeline-description">Join us as we exchange our vows in an intimate ceremony surrounded by our loved ones.</p>
+            <p class="timeline-venue">Morcom Gardens · 700 Jean St, Oakland</p>
+            <p class="timeline-description">Join us as we exchange our vows in the beautiful rose gardens, surrounded by our loved ones.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-time">5:00 PM</div>
           <div class="timeline-content">
             <h3 class="timeline-title">Cocktail Hour</h3>
+            <p class="timeline-venue">The Oakland Grove</p>
             <p class="timeline-description">Enjoy drinks and hors d'oeuvres while we take photos. Mingle with friends and family!</p>
           </div>
         </div>
@@ -168,6 +188,7 @@ const heroImage = photos[0];
           <div class="timeline-time">6:00 PM</div>
           <div class="timeline-content">
             <h3 class="timeline-title">Reception</h3>
+            <p class="timeline-venue">The Oakland Grove · 3630 Telegraph Ave, Oakland</p>
             <p class="timeline-description">Dinner, toasts, and dancing! Let's celebrate together.</p>
           </div>
         </div>
@@ -200,12 +221,95 @@ const heroImage = photos[0];
     </div>
   </section>
 
+  <!-- Attire & Color Theme Section -->
+  <section id="attire" class="attire section">
+    <div class="container-narrow">
+      <h2 class="section-title">Dress Code</h2>
+      <p class="attire-intro">
+        We'd love for our guests to complement our wedding colors! Our palette is inspired by the warmth of a sunset — rich <strong>Burnt Orange</strong> and soft <strong>Dusty Blue</strong>.
+      </p>
+
+      <div class="color-palette">
+        <div class="color-swatch-group">
+          <div class="color-swatch color-swatch--orange"></div>
+          <p class="color-name">Burnt Orange</p>
+          <p class="color-desc">Warm, rich, earthy tones — terracotta, rust, amber, copper</p>
+        </div>
+        <div class="palette-divider">
+          <span class="amp">&</span>
+        </div>
+        <div class="color-swatch-group">
+          <div class="color-swatch color-swatch--blue"></div>
+          <p class="color-name">Dusty Blue</p>
+          <p class="color-desc">Soft, muted, airy tones — slate, steel blue, powder blue, sage</p>
+        </div>
+      </div>
+
+      <div class="attire-notes">
+        <p>
+          Dress code is <strong>cocktail attire</strong>. Feel free to wear these colors, or neutrals that complement the palette — we just ask you avoid wearing white or ivory.
+        </p>
+        <p>
+          The ceremony is outdoors in a garden, so ladies may want to consider wedge heels or flats. The reception moves indoors afterward.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gifts Section -->
+  <section id="gifts" class="gifts section section-alt">
+    <div class="container-narrow">
+      <h2 class="section-title">Gifts</h2>
+      <p class="gifts-intro">
+        Your presence is truly the greatest gift! If you'd like to contribute something special, we've set up two Venmo pools in lieu of a traditional registry.
+      </p>
+
+      <div class="venmo-grid">
+        <div class="venmo-card">
+          <div class="venmo-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20.7 4.3a1 1 0 0 1 0 1.4l-11 11a1 1 0 0 1-.7.3H5a1 1 0 0 1-1-1V12a1 1 0 0 1 .3-.7l11-11a1 1 0 0 1 1.4 0l4 4z"/>
+              <line x1="15" y1="5" x2="19" y2="9"/>
+            </svg>
+          </div>
+          <h3 class="venmo-title">Wedding Fund</h3>
+          <p class="venmo-desc">Help us celebrate our big day — contribute toward wedding day experiences and memories.</p>
+          <div class="qr-placeholder">
+            <div class="qr-placeholder-inner">
+              <p class="qr-placeholder-text">Venmo QR Code</p>
+              <p class="qr-placeholder-sub">@wedding-venmo-handle</p>
+            </div>
+          </div>
+          <a href="#" class="venmo-button">Venmo Wedding Fund</a>
+        </div>
+
+        <div class="venmo-card venmo-card--blue">
+          <div class="venmo-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3 class="venmo-title">Honeymoon Fund</h3>
+          <p class="venmo-desc">Help send us on our dream honeymoon — every contribution goes toward our adventure together.</p>
+          <div class="qr-placeholder">
+            <div class="qr-placeholder-inner">
+              <p class="qr-placeholder-text">Venmo QR Code</p>
+              <p class="qr-placeholder-sub">@honeymoon-venmo-handle</p>
+            </div>
+          </div>
+          <a href="#" class="venmo-button venmo-button--blue">Venmo Honeymoon Fund</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- RSVP Section -->
   <section id="rsvp" class="rsvp section">
     <div class="container-narrow">
       <h2 class="section-title">Join Us</h2>
       <p class="rsvp-text">
-        We would be honored to have you celebrate with us on our special day. Please RSVP by May 15th, 2026.
+        We would be honored to have you celebrate with us on our special day. Please RSVP by <strong>May 15th, 2026</strong>.
       </p>
       <a
         href="https://withjoy.com/your-rsvp-page"
@@ -215,9 +319,6 @@ const heroImage = photos[0];
       >
         RSVP on WithJoy
       </a>
-      <p class="rsvp-update-note">
-        Update the RSVP link in src/pages/index.astro (line 202)
-      </p>
     </div>
   </section>
 
@@ -234,7 +335,7 @@ const heroImage = photos[0];
 
 <style>
   /* ============================================
-     DESIGN SYSTEM - Elegant & Romantic Wedding
+     DESIGN SYSTEM - Burnt Orange & Dusty Blue
      ============================================ */
 
   /* === CSS RESET === */
@@ -246,16 +347,24 @@ const heroImage = photos[0];
 
   /* === ROOT VARIABLES === */
   :root {
-    /* Color Palette - Soft & Neutral with Romantic Accents */
+    /* Base neutrals */
     --color-cream: #FDFBF7;
-    --color-beige: #E8DED3;
-    --color-taupe-light: #D4C3B5;
-    --color-taupe: #8B7B6B;
-    --color-taupe-dark: #6B5D50;
+    --color-beige: #EDE6DC;
+    --color-white: #FFFFFF;
     --color-text: #3A3632;
     --color-text-light: #6B6560;
-    --color-white: #FFFFFF;
-    --color-overlay: rgba(58, 54, 50, 0.65);
+    --color-overlay: rgba(40, 30, 20, 0.65);
+
+    /* Primary accent: Burnt Orange */
+    --color-orange: #C04A00;
+    --color-orange-light: #D96020;
+    --color-orange-pale: #F5E6DC;
+
+    /* Secondary accent: Dusty Blue */
+    --color-blue: #5A8CA6;
+    --color-blue-light: #7AAEC4;
+    --color-blue-pale: #DCE9F0;
+    --color-blue-dark: #3D6E87;
 
     /* Typography */
     --font-serif: 'Playfair Display', Georgia, serif;
@@ -283,7 +392,7 @@ const heroImage = photos[0];
 
     /* Layout */
     --max-width: 1200px;
-    --max-width-narrow: 800px;
+    --max-width-narrow: 860px;
     --border-radius: 4px;
 
     /* Shadows */
@@ -326,17 +435,17 @@ const heroImage = photos[0];
   }
 
   a {
-    color: var(--color-taupe-dark);
+    color: var(--color-orange);
     text-decoration: none;
     transition: color var(--transition-fast);
   }
 
   a:hover {
-    color: var(--color-taupe);
+    color: var(--color-orange-light);
   }
 
   a:focus-visible {
-    outline: 2px solid var(--color-taupe);
+    outline: 2px solid var(--color-orange);
     outline-offset: 2px;
   }
 
@@ -388,7 +497,7 @@ const heroImage = photos[0];
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
     z-index: 1000;
@@ -411,6 +520,10 @@ const heroImage = photos[0];
     color: var(--color-text);
   }
 
+  .nav-logo:hover {
+    color: var(--color-orange);
+  }
+
   .nav-links {
     display: flex;
     gap: var(--space-lg);
@@ -425,7 +538,7 @@ const heroImage = photos[0];
   }
 
   .nav-links a:hover {
-    color: var(--color-taupe);
+    color: var(--color-orange);
   }
 
   /* === HERO SECTION === */
@@ -462,9 +575,9 @@ const heroImage = photos[0];
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.4) 0%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0.6) 100%
+      rgba(30, 15, 5, 0.45) 0%,
+      rgba(30, 15, 5, 0.55) 50%,
+      rgba(30, 15, 5, 0.65) 100%
     );
   }
 
@@ -475,7 +588,6 @@ const heroImage = photos[0];
     padding: var(--space-lg);
   }
 
-  /* CRITICAL FIX: Hero text must be white */
   .hero-content * {
     color: var(--color-white);
   }
@@ -511,18 +623,20 @@ const heroImage = photos[0];
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
     opacity: 0.95;
     color: var(--color-white);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .hero-cta {
     display: inline-block;
     padding: var(--space-md) var(--space-2xl);
-    background-color: var(--color-white);
-    color: var(--color-text) !important;
+    background-color: var(--color-orange);
+    color: var(--color-white) !important;
     font-weight: 600;
     font-size: var(--text-base);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-lg);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
@@ -530,7 +644,8 @@ const heroImage = photos[0];
   .hero-cta:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-    color: var(--color-text) !important;
+    background-color: var(--color-orange-light);
+    color: var(--color-white) !important;
   }
 
   .scroll-indicator {
@@ -591,19 +706,20 @@ const heroImage = photos[0];
   /* === DETAILS SECTION === */
   .details-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-xl);
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
   }
 
   .detail-card {
     text-align: center;
-    padding: var(--space-xl);
+    padding: var(--space-xl) var(--space-lg);
     background-color: var(--color-cream);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-sm);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    position: relative;
   }
 
   .detail-card:hover {
@@ -611,11 +727,33 @@ const heroImage = photos[0];
     box-shadow: var(--shadow-md);
   }
 
+  .detail-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    background-color: var(--color-orange-pale);
+    color: var(--color-orange);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: var(--space-md);
+  }
+
+  .detail-badge--blue {
+    background-color: var(--color-blue-pale);
+    color: var(--color-blue-dark);
+  }
+
   .detail-icon {
-    color: var(--color-taupe);
+    color: var(--color-orange);
     margin: 0 auto var(--space-md);
     display: flex;
     justify-content: center;
+  }
+
+  .detail-card--reception .detail-icon {
+    color: var(--color-blue);
   }
 
   .detail-title {
@@ -630,6 +768,13 @@ const heroImage = photos[0];
     margin-bottom: 0;
   }
 
+  .ceremony-time {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    color: var(--color-orange);
+    margin-bottom: 0;
+  }
+
   .detail-subtext {
     font-size: var(--text-sm);
     color: var(--color-text-light);
@@ -641,12 +786,20 @@ const heroImage = photos[0];
     display: inline-block;
     margin-top: var(--space-sm);
     font-weight: 600;
-    color: var(--color-taupe-dark);
+    color: var(--color-orange);
     transition: color var(--transition-fast);
   }
 
+  .detail-card--reception .detail-link {
+    color: var(--color-blue);
+  }
+
   .detail-link:hover {
-    color: var(--color-taupe);
+    color: var(--color-orange-light);
+  }
+
+  .detail-card--reception .detail-link:hover {
+    color: var(--color-blue-light);
   }
 
   /* === SCHEDULE SECTION === */
@@ -663,7 +816,7 @@ const heroImage = photos[0];
     top: 0;
     bottom: 0;
     width: 2px;
-    background-color: var(--color-beige);
+    background: linear-gradient(to bottom, var(--color-orange), var(--color-blue));
     transform: translateX(-50%);
   }
 
@@ -682,11 +835,16 @@ const heroImage = photos[0];
     top: var(--space-sm);
     width: 16px;
     height: 16px;
-    background-color: var(--color-taupe);
+    background-color: var(--color-orange);
     border: 4px solid var(--color-cream);
     border-radius: 50%;
     transform: translateX(-50%);
     z-index: 1;
+  }
+
+  .timeline-item:nth-child(3)::before,
+  .timeline-item:nth-child(4)::before {
+    background-color: var(--color-blue);
   }
 
   .timeline-time {
@@ -695,7 +853,12 @@ const heroImage = photos[0];
     font-size: var(--text-lg);
     font-family: var(--font-serif);
     font-weight: 600;
-    color: var(--color-taupe-dark);
+    color: var(--color-orange);
+  }
+
+  .timeline-item:nth-child(3) .timeline-time,
+  .timeline-item:nth-child(4) .timeline-time {
+    color: var(--color-blue-dark);
   }
 
   .timeline-content {
@@ -708,9 +871,23 @@ const heroImage = photos[0];
     font-weight: 500;
   }
 
+  .timeline-venue {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+    margin-bottom: var(--space-xs);
+  }
+
+  .timeline-item:nth-child(3) .timeline-venue {
+    color: var(--color-blue);
+  }
+
   .timeline-description {
     color: var(--color-text-light);
     line-height: 1.6;
+    margin-bottom: 0;
   }
 
   /* === PHOTO GALLERY === */
@@ -746,6 +923,215 @@ const heroImage = photos[0];
     transform: scale(1.05);
   }
 
+  /* === ATTIRE SECTION === */
+  .attire-intro {
+    font-size: var(--text-base);
+    line-height: 1.8;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto var(--space-2xl);
+    color: var(--color-text);
+  }
+
+  .color-palette {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .color-swatch-group {
+    text-align: center;
+    flex: 1;
+    max-width: 280px;
+  }
+
+  .color-swatch {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto var(--space-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  .color-swatch--orange {
+    background: radial-gradient(circle at 35% 35%, #D96020, #A83500);
+  }
+
+  .color-swatch--blue {
+    background: radial-gradient(circle at 35% 35%, #8FC4D8, #4A7D96);
+  }
+
+  .color-name {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+  }
+
+  .color-swatch-group:first-child .color-name {
+    color: var(--color-orange);
+  }
+
+  .color-swatch-group:last-child .color-name {
+    color: var(--color-blue-dark);
+  }
+
+  .color-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    margin-bottom: 0;
+  }
+
+  .palette-divider {
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    color: var(--color-text-light);
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  .attire-notes {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--color-beige);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+  }
+
+  .attire-notes p {
+    font-size: var(--text-base);
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+
+  .attire-notes p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* === GIFTS SECTION === */
+  .gifts-intro {
+    font-size: var(--text-base);
+    line-height: 1.8;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto var(--space-2xl);
+  }
+
+  .venmo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .venmo-card {
+    text-align: center;
+    padding: var(--space-xl);
+    background-color: var(--color-cream);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border-top: 4px solid var(--color-orange);
+  }
+
+  .venmo-card--blue {
+    border-top-color: var(--color-blue);
+  }
+
+  .venmo-icon {
+    color: var(--color-orange);
+    margin: 0 auto var(--space-md);
+    display: flex;
+    justify-content: center;
+  }
+
+  .venmo-card--blue .venmo-icon {
+    color: var(--color-blue);
+  }
+
+  .venmo-title {
+    font-size: var(--text-2xl);
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+  }
+
+  .venmo-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+  }
+
+  .qr-placeholder {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto var(--space-lg);
+    border: 2px dashed var(--color-orange);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-orange-pale);
+  }
+
+  .venmo-card--blue .qr-placeholder {
+    border-color: var(--color-blue);
+    background-color: var(--color-blue-pale);
+  }
+
+  .qr-placeholder-inner {
+    text-align: center;
+  }
+
+  .qr-placeholder-text {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-orange);
+    margin-bottom: var(--space-xs);
+  }
+
+  .venmo-card--blue .qr-placeholder-text {
+    color: var(--color-blue-dark);
+  }
+
+  .qr-placeholder-sub {
+    font-size: var(--text-xs);
+    color: var(--color-text-light);
+    margin-bottom: 0;
+    font-style: italic;
+  }
+
+  .venmo-button {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-xl);
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .venmo-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-orange-light);
+    color: var(--color-white);
+  }
+
+  .venmo-button--blue {
+    background-color: var(--color-blue);
+  }
+
+  .venmo-button--blue:hover {
+    background-color: var(--color-blue-light);
+    color: var(--color-white);
+  }
+
   /* === RSVP SECTION === */
   .rsvp {
     text-align: center;
@@ -764,7 +1150,7 @@ const heroImage = photos[0];
   .rsvp-button {
     display: inline-block;
     padding: var(--space-md) var(--space-2xl);
-    background-color: var(--color-taupe-dark);
+    background-color: var(--color-orange);
     color: var(--color-white);
     font-weight: 600;
     font-size: var(--text-base);
@@ -778,20 +1164,13 @@ const heroImage = photos[0];
   .rsvp-button:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
-    background-color: var(--color-taupe);
+    background-color: var(--color-orange-light);
     color: var(--color-white);
-  }
-
-  .rsvp-update-note {
-    margin-top: var(--space-lg);
-    font-size: var(--text-xs);
-    color: var(--color-text-light);
-    font-style: italic;
   }
 
   /* === FOOTER === */
   .footer {
-    background-color: var(--color-taupe-dark);
+    background: linear-gradient(135deg, #2A1A0A 0%, #1A2A35 100%);
     color: var(--color-white);
     padding: var(--space-2xl) 0;
     text-align: center;
@@ -804,6 +1183,7 @@ const heroImage = photos[0];
   .footer-text {
     font-size: var(--text-base);
     margin-bottom: var(--space-sm);
+    opacity: 0.8;
   }
 
   .footer-names {
@@ -815,12 +1195,20 @@ const heroImage = photos[0];
 
   .footer-date {
     font-size: var(--text-sm);
-    opacity: 0.9;
+    opacity: 0.7;
   }
 
   /* === RESPONSIVE DESIGN === */
 
   /* Tablet and below */
+  @media (max-width: 900px) {
+    .details-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+      max-width: 480px;
+    }
+  }
+
   @media (max-width: 768px) {
     :root {
       --text-4xl: 2.5rem;
@@ -829,7 +1217,9 @@ const heroImage = photos[0];
     }
 
     .nav-links {
-      gap: var(--space-md);
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .nav-links a {
@@ -854,11 +1244,6 @@ const heroImage = photos[0];
 
     .section-title {
       font-size: var(--text-3xl);
-    }
-
-    .details-grid {
-      grid-template-columns: 1fr;
-      gap: var(--space-lg);
     }
 
     .timeline::before {
@@ -891,6 +1276,19 @@ const heroImage = photos[0];
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: var(--space-sm);
     }
+
+    .color-palette {
+      flex-direction: column;
+      gap: var(--space-xl);
+    }
+
+    .palette-divider {
+      transform: rotate(90deg);
+    }
+
+    .venmo-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* Mobile */
@@ -912,12 +1310,6 @@ const heroImage = photos[0];
       padding: var(--space-sm) var(--space-md);
     }
 
-    .nav-links {
-      gap: var(--space-sm);
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
     .hero-cta {
       padding: var(--space-sm) var(--space-lg);
       font-size: var(--text-sm);
@@ -925,6 +1317,11 @@ const heroImage = photos[0];
 
     .photo-gallery {
       grid-template-columns: 1fr;
+    }
+
+    .color-swatch {
+      width: 100px;
+      height: 100px;
     }
   }
 
@@ -945,7 +1342,8 @@ const heroImage = photos[0];
     .nav,
     .scroll-indicator,
     .hero-cta,
-    .rsvp-button {
+    .rsvp-button,
+    .venmo-button {
       display: none;
     }
 
