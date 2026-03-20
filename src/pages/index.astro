@@ -148,7 +148,7 @@ const heroImage = photos[0];
             </svg>
           </div>
           <h3 class="detail-title">{receptionVenue}</h3>
-          <p class="detail-text">Following the ceremony</p>
+          <p class="detail-text">~4:15 PM · 10 min from ceremony</p>
           <p class="detail-subtext">{receptionAddress}</p>
           <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(receptionAddress)}`}
              class="detail-link"
@@ -177,19 +177,11 @@ const heroImage = photos[0];
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-time">5:00 PM</div>
-          <div class="timeline-content">
-            <h3 class="timeline-title">Cocktail Hour</h3>
-            <p class="timeline-venue">The Oakland Grove</p>
-            <p class="timeline-description">Enjoy drinks and hors d'oeuvres while we take photos. Mingle with friends and family!</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-time">6:00 PM</div>
+          <div class="timeline-time">~4:15 PM</div>
           <div class="timeline-content">
             <h3 class="timeline-title">Reception</h3>
             <p class="timeline-venue">The Oakland Grove · 3630 Telegraph Ave, Oakland</p>
-            <p class="timeline-description">Dinner, toasts, and dancing! Let's celebrate together.</p>
+            <p class="timeline-description">Head over to The Oakland Grove (about 10 minutes away) for dinner, dim sum, toasts, and dancing!</p>
           </div>
         </div>
         <div class="timeline-item">
@@ -208,6 +200,13 @@ const heroImage = photos[0];
     <div class="container">
       <h2 class="section-title">Our Journey Together</h2>
       <p class="section-subtitle">Moments we've shared along the way</p>
+
+      <div class="hashtag-callout">
+        <p class="hashtag-prompt">Attending the wedding? Share your photos!</p>
+        <p class="hashtag-tag">#kangie2026</p>
+        <p class="hashtag-note">Tag your Instagram and TikTok posts so we can find and cherish every moment captured by our guests.</p>
+      </div>
+
       <div class="photo-gallery">
         {photos.map((photo, index) => (
           <div class="photo-item">
@@ -274,13 +273,11 @@ const heroImage = photos[0];
           </div>
           <h3 class="venmo-title">Wedding Fund</h3>
           <p class="venmo-desc">Help us celebrate our big day — contribute toward wedding day experiences and memories.</p>
-          <div class="qr-placeholder">
-            <div class="qr-placeholder-inner">
-              <p class="qr-placeholder-text">Venmo QR Code</p>
-              <p class="qr-placeholder-sub">@wedding-venmo-handle</p>
-            </div>
+          <div class="qr-real">
+            <img src="/images/venmo-wedding-qr.png" alt="Venmo QR code for Wedding Fund — @Kerry-Jones-4" />
           </div>
-          <a href="#" class="venmo-button">Venmo Wedding Fund</a>
+          <p class="venmo-handle">@Kerry-Jones-4</p>
+          <a href="https://venmo.com/Kerry-Jones-4" class="venmo-button" target="_blank" rel="noopener noreferrer">Venmo Wedding Fund</a>
         </div>
 
         <div class="venmo-card venmo-card--blue">
@@ -292,13 +289,11 @@ const heroImage = photos[0];
           </div>
           <h3 class="venmo-title">Honeymoon Fund</h3>
           <p class="venmo-desc">Help send us on our dream honeymoon — every contribution goes toward our adventure together.</p>
-          <div class="qr-placeholder">
-            <div class="qr-placeholder-inner">
-              <p class="qr-placeholder-text">Venmo QR Code</p>
-              <p class="qr-placeholder-sub">@honeymoon-venmo-handle</p>
-            </div>
+          <div class="qr-real">
+            <img src="/images/venmo-honeymoon-qr.png" alt="Venmo QR code for Honeymoon Fund — @anjhuang" />
           </div>
-          <a href="#" class="venmo-button venmo-button--blue">Venmo Honeymoon Fund</a>
+          <p class="venmo-handle">@anjhuang</p>
+          <a href="https://venmo.com/anjhuang" class="venmo-button venmo-button--blue" target="_blank" rel="noopener noreferrer">Venmo Honeymoon Fund</a>
         </div>
       </div>
     </div>
@@ -890,6 +885,42 @@ const heroImage = photos[0];
     margin-bottom: 0;
   }
 
+  /* === HASHTAG CALLOUT === */
+  .hashtag-callout {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, var(--color-orange-pale), var(--color-blue-pale));
+    border-radius: var(--border-radius);
+  }
+
+  .hashtag-prompt {
+    font-size: var(--text-base);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  .hashtag-tag {
+    font-family: var(--font-serif);
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--color-orange), var(--color-blue-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-sm);
+  }
+
+  .hashtag-note {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
   /* === PHOTO GALLERY === */
   .photo-gallery {
     display: grid;
@@ -1063,43 +1094,24 @@ const heroImage = photos[0];
     margin-bottom: var(--space-lg);
   }
 
-  .qr-placeholder {
+  .qr-real {
     width: 180px;
     height: 180px;
-    margin: 0 auto var(--space-lg);
-    border: 2px dashed var(--color-orange);
+    margin: 0 auto var(--space-sm);
+  }
+
+  .qr-real img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     border-radius: var(--border-radius);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-orange-pale);
   }
 
-  .venmo-card--blue .qr-placeholder {
-    border-color: var(--color-blue);
-    background-color: var(--color-blue-pale);
-  }
-
-  .qr-placeholder-inner {
-    text-align: center;
-  }
-
-  .qr-placeholder-text {
+  .venmo-handle {
     font-size: var(--text-sm);
     font-weight: 600;
-    color: var(--color-orange);
-    margin-bottom: var(--space-xs);
-  }
-
-  .venmo-card--blue .qr-placeholder-text {
-    color: var(--color-blue-dark);
-  }
-
-  .qr-placeholder-sub {
-    font-size: var(--text-xs);
     color: var(--color-text-light);
-    margin-bottom: 0;
-    font-style: italic;
+    margin-bottom: var(--space-lg);
   }
 
   .venmo-button {
