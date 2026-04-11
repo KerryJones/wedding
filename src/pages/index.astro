@@ -89,7 +89,7 @@ const heroImage = photos[0];
       <h2 class="section-title">Our Story</h2>
       <div class="story-content">
         <p class="story-text">
-          We started with tea dates, then a date over tea. Over the course of numerous 3 am conversations, cooking adventures, climbing dates — we found ourselves in a cozy Lake Tahoe cabin. We picnicked breakfast over a blanket on the floor, Leon Bridges serendipitously playing over the speaker, and the same thought coalesced for both of us at the same time on a snowy morning.
+          We started with tea dates, then a date over tea. Over the course of numerous 3am conversations, cooking adventures, climbing dates — we found ourselves in a cozy Lake Tahoe cabin. We picnicked breakfast over a blanket on the floor, Leon Bridges serendipitously playing over the speaker, and the same thought coalesced for both of us at the same time on a snowy morning.
         </p>
         <p class="story-text">
           Three ski seasons, a ton more climbing, and one sunset beach proposal later, we're excited to celebrate the continuation of our adventure with all of you.
@@ -147,7 +147,7 @@ const heroImage = photos[0];
             </svg>
           </div>
           <h3 class="detail-title">{receptionVenue}</h3>
-          <p class="detail-text">~4:15 PM · 10 min from ceremony</p>
+          <p class="detail-text">4:30 PM · 10 min from ceremony</p>
           <p class="detail-subtext">{receptionAddress}</p>
           <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(receptionAddress)}`}
              class="detail-link"
@@ -172,22 +172,43 @@ const heroImage = photos[0];
           <div class="timeline-content">
             <h3 class="timeline-title">Ceremony</h3>
             <p class="timeline-venue">Morcom Gardens · 700 Jean St, Oakland</p>
-            <p class="timeline-description">Join us as we exchange our vows in the beautiful rose gardens, surrounded by our loved ones.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-time">~4:15 PM</div>
+          <div class="timeline-time">4:30 PM</div>
           <div class="timeline-content">
-            <h3 class="timeline-title">Reception</h3>
+            <h3 class="timeline-title">Cocktails & Dim Sum</h3>
             <p class="timeline-venue">The Oakland Grove · 3630 Telegraph Ave, Oakland</p>
-            <p class="timeline-description">Head over to The Oakland Grove (about 10 minutes away) for dinner, dim sum, toasts, and dancing!</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">5:00 PM</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Dinner & Speeches</h3>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">6:00 PM</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Cake</h3>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">6:30 PM</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">First Dance</h3>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">7:00 PM</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Dancing</h3>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-time">10:00 PM</div>
           <div class="timeline-content">
-            <h3 class="timeline-title">Last Dance</h3>
-            <p class="timeline-description">Send us off with love as we begin our journey as newlyweds.</p>
+            <h3 class="timeline-title">Send-off</h3>
           </div>
         </div>
       </div>
@@ -260,8 +281,8 @@ const heroImage = photos[0];
         <div class="venmo-card">
           <div class="venmo-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M20.7 4.3a1 1 0 0 1 0 1.4l-11 11a1 1 0 0 1-.7.3H5a1 1 0 0 1-1-1V12a1 1 0 0 1 .3-.7l11-11a1 1 0 0 1 1.4 0l4 4z"/>
-              <line x1="15" y1="5" x2="19" y2="9"/>
+              <circle cx="8.5" cy="12" r="5"/>
+              <circle cx="15.5" cy="12" r="5"/>
             </svg>
           </div>
           <h3 class="venmo-title">Wedding Fund</h3>
@@ -275,9 +296,23 @@ const heroImage = photos[0];
 
         <div class="venmo-card venmo-card--blue">
           <div class="venmo-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- head -->
+              <circle cx="14" cy="3.5" r="1.5"/>
+              <!-- body -->
+              <line x1="14" y1="5" x2="12" y2="11"/>
+              <!-- left arm up -->
+              <line x1="12" y1="8" x2="8" y2="6"/>
+              <!-- right arm down -->
+              <line x1="12" y1="8" x2="16" y2="10"/>
+              <!-- left leg -->
+              <line x1="12" y1="11" x2="9" y2="16"/>
+              <!-- right leg -->
+              <line x1="12" y1="11" x2="15" y2="15"/>
+              <!-- left foot -->
+              <line x1="9" y1="16" x2="6" y2="15"/>
+              <!-- right foot -->
+              <line x1="15" y1="15" x2="18" y2="17"/>
             </svg>
           </div>
           <h3 class="venmo-title">Dance Fund</h3>
@@ -812,8 +847,9 @@ const heroImage = photos[0];
     z-index: 1;
   }
 
-  .timeline-item:nth-child(3)::before,
-  .timeline-item:nth-child(4)::before {
+  .timeline-item:nth-child(5)::before,
+  .timeline-item:nth-child(6)::before,
+  .timeline-item:nth-child(7)::before {
     background-color: var(--color-blue);
   }
 
@@ -826,8 +862,9 @@ const heroImage = photos[0];
     color: var(--color-orange);
   }
 
-  .timeline-item:nth-child(3) .timeline-time,
-  .timeline-item:nth-child(4) .timeline-time {
+  .timeline-item:nth-child(5) .timeline-time,
+  .timeline-item:nth-child(6) .timeline-time,
+  .timeline-item:nth-child(7) .timeline-time {
     color: var(--color-blue-dark);
   }
 
@@ -850,7 +887,7 @@ const heroImage = photos[0];
     margin-bottom: var(--space-xs);
   }
 
-  .timeline-item:nth-child(3) .timeline-venue {
+  .timeline-item:nth-child(2) .timeline-venue {
     color: var(--color-blue);
   }
 
