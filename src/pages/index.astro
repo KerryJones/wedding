@@ -59,7 +59,6 @@ const heroImage = photos[0];
         <li><a href="#photos">Photos</a></li>
         <li><a href="#attire">Attire</a></li>
         <li><a href="#gifts">Gifts</a></li>
-        <li><a href="#rsvp">RSVP</a></li>
       </ul>
     </div>
   </nav>
@@ -77,7 +76,7 @@ const heroImage = photos[0];
         <time datetime="2026-06-27">{weddingDate}</time>
       </div>
       <div class="hero-location">Oakland, California</div>
-      <a href="#rsvp" class="hero-cta">RSVP Now</a>
+      <a href="#details" class="hero-cta">View Details</a>
     </div>
     <div class="scroll-indicator" aria-hidden="true">
       <span></span>
@@ -90,10 +89,10 @@ const heroImage = photos[0];
       <h2 class="section-title">Our Story</h2>
       <div class="story-content">
         <p class="story-text">
-          Every love story is beautiful, but ours is our favorite. From the moment we met, we knew there was something special between us. Through laughter, adventures, and quiet moments together, our bond has only grown stronger.
+          We started with tea dates, then a date over tea. Over the course of numerous 3 am conversations, cooking adventures, climbing dates — we found ourselves in a cozy Lake Tahoe cabin. We picnicked breakfast over a blanket on the floor, Leon Bridges serendipitously playing over the speaker, and the same thought coalesced for both of us at the same time on a snowy morning.
         </p>
         <p class="story-text">
-          We've shared countless memories, supported each other through life's challenges, and discovered that together, we're better than we ever could be apart. Now, we're excited to begin this next chapter and celebrate our love with all of you.
+          Three ski seasons, a ton more climbing, and one sunset beach proposal later, we're excited to celebrate the continuation of our adventure with all of you.
         </p>
       </div>
     </div>
@@ -201,12 +200,6 @@ const heroImage = photos[0];
       <h2 class="section-title">Our Journey Together</h2>
       <p class="section-subtitle">Moments we've shared along the way</p>
 
-      <div class="hashtag-callout">
-        <p class="hashtag-prompt">Attending the wedding? Share your photos!</p>
-        <p class="hashtag-tag">#kangie2026</p>
-        <p class="hashtag-note">Tag your Instagram and TikTok posts so we can find and cherish every moment captured by our guests.</p>
-      </div>
-
       <div class="photo-gallery">
         {photos.map((photo, index) => (
           <div class="photo-item">
@@ -287,33 +280,15 @@ const heroImage = photos[0];
               <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
             </svg>
           </div>
-          <h3 class="venmo-title">Honeymoon Fund</h3>
-          <p class="venmo-desc">Help send us on our dream honeymoon — every contribution goes toward our adventure together.</p>
+          <h3 class="venmo-title">Dance Fund</h3>
+          <p class="venmo-desc">We both dance — a lot. If you'd like to contribute to our travel, competitions, and lessons, we would greatly appreciate it.</p>
           <div class="qr-real">
-            <img src="/images/venmo-honeymoon-qr.png" alt="Venmo QR code for Honeymoon Fund — @anjhuang" />
+            <img src="/images/venmo-dance-qr.png" alt="Venmo QR code for Dance Fund — @anjhuang" />
           </div>
           <p class="venmo-handle">@anjhuang</p>
-          <a href="https://venmo.com/anjhuang" class="venmo-button venmo-button--blue" target="_blank" rel="noopener noreferrer">Venmo Honeymoon Fund</a>
+          <a href="https://venmo.com/anjhuang" class="venmo-button venmo-button--blue" target="_blank" rel="noopener noreferrer">Venmo Dance Fund</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- RSVP Section -->
-  <section id="rsvp" class="rsvp section">
-    <div class="container-narrow">
-      <h2 class="section-title">Join Us</h2>
-      <p class="rsvp-text">
-        We would be honored to have you celebrate with us on our special day. Please RSVP by <strong>May 15th, 2026</strong>.
-      </p>
-      <a
-        href="https://withjoy.com/your-rsvp-page"
-        class="rsvp-button"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        RSVP on WithJoy
-      </a>
     </div>
   </section>
 
@@ -885,42 +860,6 @@ const heroImage = photos[0];
     margin-bottom: 0;
   }
 
-  /* === HASHTAG CALLOUT === */
-  .hashtag-callout {
-    text-align: center;
-    margin-bottom: var(--space-2xl);
-    padding: var(--space-xl);
-    background: linear-gradient(135deg, var(--color-orange-pale), var(--color-blue-pale));
-    border-radius: var(--border-radius);
-  }
-
-  .hashtag-prompt {
-    font-size: var(--text-base);
-    color: var(--color-text-light);
-    margin-bottom: var(--space-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 500;
-  }
-
-  .hashtag-tag {
-    font-family: var(--font-serif);
-    font-size: var(--text-4xl);
-    font-weight: 600;
-    background: linear-gradient(135deg, var(--color-orange), var(--color-blue-dark));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: var(--space-sm);
-  }
-
-  .hashtag-note {
-    font-size: var(--text-sm);
-    color: var(--color-text-light);
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
   /* === PHOTO GALLERY === */
   .photo-gallery {
     display: grid;
@@ -1095,8 +1034,8 @@ const heroImage = photos[0];
   }
 
   .qr-real {
-    width: 180px;
-    height: 180px;
+    width: min(180px, 100%);
+    height: min(180px, 100%);
     margin: 0 auto var(--space-sm);
   }
 
@@ -1111,7 +1050,7 @@ const heroImage = photos[0];
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--color-text-light);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-sm);
   }
 
   .venmo-button {
@@ -1141,42 +1080,6 @@ const heroImage = photos[0];
 
   .venmo-button--blue:hover {
     background-color: var(--color-blue-light);
-    color: var(--color-white);
-  }
-
-  /* === RSVP SECTION === */
-  .rsvp {
-    text-align: center;
-  }
-
-  .rsvp-text {
-    font-size: var(--text-base);
-    line-height: 1.8;
-    color: var(--color-text);
-    margin-bottom: var(--space-xl);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .rsvp-button {
-    display: inline-block;
-    padding: var(--space-md) var(--space-2xl);
-    background-color: var(--color-orange);
-    color: var(--color-white);
-    font-weight: 600;
-    font-size: var(--text-base);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-md);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  .rsvp-button:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-    background-color: var(--color-orange-light);
     color: var(--color-white);
   }
 
@@ -1354,7 +1257,6 @@ const heroImage = photos[0];
     .nav,
     .scroll-indicator,
     .hero-cta,
-    .rsvp-button,
     .venmo-button {
       display: none;
     }
