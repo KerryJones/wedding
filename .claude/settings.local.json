@@ -14,7 +14,11 @@
       "WebFetch(domain:docs.astro.build)",
       "WebSearch",
       "WebFetch(domain:developers.cloudflare.com)",
-      "Skill(update-config)"
+      "Skill(update-config)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(npx astro:*)",
+      "Bash(npx http-server:*)"
     ]
   }
 }

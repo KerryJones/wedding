@@ -1,0 +1,25 @@
+- generic [active] [ref=e1]:
+  - img "K & A" [ref=e2]
+  - heading "Kerry & Angie" [level=1] [ref=e3]
+  - paragraph [ref=e4]: invite you to celebrate their wedding day
+  - img "---" [ref=e5]
+  - paragraph [ref=e6]:
+    - text: Saturday, the Twenty-Seventh of June
+    - text: Two Thousand and Twenty-Six
+  - img "~" [ref=e7]
+  - paragraph [ref=e8]: Ceremony at Half Past Three
+  - paragraph [ref=e9]: Morcom Gardens
+  - paragraph [ref=e10]: 700 Jean St, Oakland, CA 94610
+  - img "~" [ref=e11]
+  - paragraph [ref=e12]: Reception to Follow at Half Past Four
+  - paragraph [ref=e13]: The Oakland Grove
+  - paragraph [ref=e14]: Oakland, California
+  - img "---" [ref=e15]
+  - paragraph [ref=e16]:
+    - text: It would mean the world
+    - text: to have you there.
+  - paragraph [ref=e17]: For all the details, please visit our wedding website.
+  - link "Visit Our Wedding Website" [ref=e18] [cursor=pointer]:
+    - /url: https://wedding.kerryjones.net
+  - paragraph [ref=e19]: Kerry & Angie
+  - paragraph [ref=e20]: June 27th, 2026 · Oakland, California
