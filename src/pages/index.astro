@@ -315,7 +315,7 @@ const heroImage = photos[0];
     <div class="container-narrow">
       <h2 class="section-title">Gifts</h2>
       <p class="gifts-intro">
-        Your presence is truly the greatest gift! If you'd like to contribute something special, we've set up two Venmo pools in lieu of a traditional registry.
+        Your presence is truly the greatest gift! If you'd like to contribute something special, we've set up a Venmo pool in lieu of a traditional registry.
       </p>
 
       <div class="venmo-grid">
@@ -336,14 +336,13 @@ const heroImage = photos[0];
         </div>
 
         <div class="venmo-card venmo-card--blue">
-          <div class="venmo-icon venmo-icon--emoji" aria-hidden="true">💃</div>
-          <h3 class="venmo-title">Dance Fund</h3>
-          <p class="venmo-desc">We both dance — a lot. If you'd like to contribute to our travel, competitions, and lessons, we would greatly appreciate it.</p>
+          <div class="venmo-icon venmo-icon--emoji" aria-hidden="true">🤝</div>
+          <h3 class="venmo-title">Volunteer</h3>
+          <p class="venmo-desc">Want to help make our day extra special? We'd love some extra hands with setup, coordination, and other day-of tasks.</p>
           <div class="qr-real">
-            <img src="/images/venmo-dance-qr.png" alt="Venmo QR code for Dance Fund — @anjhuang" />
+            <img src="/images/volunteer.png" alt="Helping hands illustration" />
           </div>
-          <p class="venmo-handle">@anjhuang</p>
-          <a href="https://venmo.com/anjhuang" class="venmo-button venmo-button--blue" target="_blank" rel="noopener noreferrer">Venmo Dance Fund</a>
+          <a href="https://app.youform.com/forms/vp2vrc1p" class="venmo-button venmo-button--blue" target="_blank" rel="noopener noreferrer">Sign Up to Volunteer</a>
         </div>
       </div>
     </div>
@@ -1062,6 +1061,13 @@ const heroImage = photos[0];
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
     border-top: 4px solid var(--color-orange);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .venmo-card .venmo-button {
+    margin-top: auto;
   }
 
   .venmo-card--blue {
