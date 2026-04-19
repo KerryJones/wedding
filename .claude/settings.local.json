@@ -18,7 +18,12 @@
       "WebFetch(domain:api.github.com)",
       "WebFetch(domain:github.com)",
       "Bash(npx astro:*)",
-      "Bash(npx http-server:*)"
+      "Bash(npx http-server:*)",
+      "Bash(pkill -f \"http-server\")",
+      "Bash(pkill -f \"chrome.*mcp-chrome\")",
+      "Bash(pkill -9 -f \"Google Chrome\")",
+      "Bash(pkill -9 -f \"Chromium|chrome\")",
+      "Bash(rm -f /Users/kerryjones/Library/Caches/ms-playwright/mcp-chrome-*/SingletonLock)"
     ]
   }
 }
