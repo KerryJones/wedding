@@ -55,7 +55,6 @@ const heroImage = photos[0];
       <ul class="nav-links">
         <li><a href="#story">Our Story</a></li>
         <li><a href="#details">Details</a></li>
-        <li><a href="#parking">Parking</a></li>
         <li><a href="#schedule">Schedule</a></li>
         <li><a href="#photos">Photos</a></li>
         <li><a href="#photos-share">Share</a></li>
@@ -138,6 +137,12 @@ const heroImage = photos[0];
              rel="noopener noreferrer">
             Get Directions →
           </a>
+          <a href="/images/morcom-parking-directions.png"
+             class="detail-link"
+             target="_blank"
+             rel="noopener noreferrer">
+            View Parking Map →
+          </a>
         </div>
 
         <!-- Reception Card -->
@@ -158,40 +163,14 @@ const heroImage = photos[0];
              rel="noopener noreferrer">
             Get Directions →
           </a>
+          <a href="https://images.squarespace-cdn.com/content/v1/6942ebe0e6bd0a2766c07af8/fccaf22f-e00e-471c-998d-07e0acfd7b5f/no+parking+on+37th+or+36th.png?format=1500w"
+             class="detail-link"
+             target="_blank"
+             rel="noopener noreferrer">
+            View Parking Map →
+          </a>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- Parking Section -->
-  <section id="parking" class="parking section section-alt">
-    <div class="container">
-      <h2 class="section-title">Parking</h2>
-      <p class="section-subtitle">Where to park at each venue</p>
-      <div class="parking-grid">
-        <div class="parking-card">
-          <div class="parking-icon">
-            <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect width="18" height="18" x="3" y="3" rx="2"/>
-              <path d="M9 17V7h4a3 3 0 0 1 0 6H9"/>
-            </svg>
-          </div>
-          <h3 class="parking-name">Morcom Gardens</h3>
-          <p class="parking-location">Ceremony</p>
-          <a href="/images/morcom-parking-directions.png" target="_blank" rel="noopener noreferrer" class="parking-link">View Parking Map →</a>
-        </div>
-        <div class="parking-card">
-          <div class="parking-icon">
-            <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect width="18" height="18" x="3" y="3" rx="2"/>
-              <path d="M9 17V7h4a3 3 0 0 1 0 6H9"/>
-            </svg>
-          </div>
-          <h3 class="parking-name">The Oakland Grove</h3>
-          <p class="parking-location">Reception</p>
-          <a href="https://images.squarespace-cdn.com/content/v1/6942ebe0e6bd0a2766c07af8/fccaf22f-e00e-471c-998d-07e0acfd7b5f/no+parking+on+37th+or+36th.png?format=1500w" target="_blank" rel="noopener noreferrer" class="parking-link">View Parking Map →</a>
-        </div>
       </div>
     </div>
   </section>
@@ -880,7 +859,7 @@ const heroImage = photos[0];
   }
 
   .detail-link {
-    display: inline-block;
+    display: block;
     margin-top: var(--space-sm);
     font-weight: 600;
     color: var(--color-orange);
@@ -1255,7 +1234,7 @@ const heroImage = photos[0];
     letter-spacing: 0.02em;
   }
 
-  /* === HOTELS & PARKING SECTIONS === */
+  /* === HOTELS SECTION === */
   .hotels-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1264,16 +1243,7 @@ const heroImage = photos[0];
     margin: 0 auto;
   }
 
-  .parking-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-xl);
-    max-width: 740px;
-    margin: 0 auto;
-  }
-
-  .hotel-card,
-  .parking-card {
+  .hotel-card {
     text-align: center;
     padding: var(--space-xl) var(--space-lg);
     background-color: var(--color-cream);
@@ -1282,37 +1252,32 @@ const heroImage = photos[0];
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   }
 
-  .hotel-card:hover,
-  .parking-card:hover {
+  .hotel-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
   }
 
-  .hotel-icon,
-  .parking-icon {
+  .hotel-icon {
     color: var(--color-blue);
     margin: 0 auto var(--space-md);
     display: flex;
     justify-content: center;
   }
 
-  .hotel-name,
-  .parking-name {
+  .hotel-name {
     font-family: var(--font-serif);
     font-size: var(--text-xl);
     margin-bottom: var(--space-xs);
     font-weight: 500;
   }
 
-  .hotel-location,
-  .parking-location {
+  .hotel-location {
     font-size: var(--text-sm);
     color: var(--color-text-light);
     margin-bottom: var(--space-md);
   }
 
-  .hotel-link,
-  .parking-link {
+  .hotel-link {
     display: inline-block;
     margin-top: var(--space-xs);
     font-weight: 600;
@@ -1320,8 +1285,7 @@ const heroImage = photos[0];
     transition: color var(--transition-fast);
   }
 
-  .hotel-link:hover,
-  .parking-link:hover {
+  .hotel-link:hover {
     color: var(--color-blue-light);
   }
 
@@ -1360,8 +1324,7 @@ const heroImage = photos[0];
   /* Tablet and below */
   @media (max-width: 900px) {
     .details-grid,
-    .hotels-grid,
-    .parking-grid {
+    .hotels-grid {
       grid-template-columns: 1fr;
       gap: var(--space-lg);
       max-width: 480px;
