@@ -57,6 +57,7 @@ const heroImage = photos[0];
         <li><a href="#details">Details</a></li>
         <li><a href="#schedule">Schedule</a></li>
         <li><a href="#photos">Photos</a></li>
+        <li><a href="#photos-share">Share</a></li>
         <li><a href="#attire">Attire</a></li>
         <li><a href="#hotels">Hotels</a></li>
         <li><a href="#gifts">Gifts</a></li>
@@ -235,8 +236,45 @@ const heroImage = photos[0];
     </div>
   </section>
 
+  <!-- Share Photos & Video Section -->
+  <section id="photos-share" class="photos-share section">
+    <div class="container-narrow">
+      <h2 class="section-title">Share Photos & Video</h2>
+      <p class="share-intro">
+        While we have a professional photographer, we'd love any photos — and especially video — you're inspired to capture at the reception. During the ceremony, please be present and in the moment with us.
+      </p>
+
+      <div class="share-grid">
+        <div class="share-card">
+          <div class="share-icon">
+            <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="9" x2="20" y2="9"/>
+              <line x1="4" y1="15" x2="20" y2="15"/>
+              <line x1="10" y1="3" x2="8" y2="21"/>
+              <line x1="16" y1="3" x2="14" y2="21"/>
+            </svg>
+          </div>
+          <h3 class="share-title">Use Our Hashtag</h3>
+          <p class="share-desc">Tag your social posts so we can find them.</p>
+          <div class="share-tag">#Kangie2026</div>
+        </div>
+
+        <div class="share-card share-card--blue">
+          <div class="share-icon">
+            <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/>
+            </svg>
+          </div>
+          <h3 class="share-title">Add to Our Drive</h3>
+          <p class="share-desc">Drop your photos and video into the "Kangie 2026 — Photos and Video" shared folder.</p>
+          <a href="https://drive.google.com/drive/folders/1fsQkTtakAOchHz5zwtb813QvoXYJXIOf" class="share-button share-button--blue" target="_blank" rel="noopener noreferrer">Open Drive Folder</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Attire & Color Theme Section -->
-  <section id="attire" class="attire section">
+  <section id="attire" class="attire section section-alt">
     <div class="container-narrow">
       <h2 class="section-title">Dress Code</h2>
       <p class="attire-intro">
@@ -271,7 +309,7 @@ const heroImage = photos[0];
   </section>
 
   <!-- Hotels Section -->
-  <section id="hotels" class="hotels section section-alt">
+  <section id="hotels" class="hotels section">
     <div class="container">
       <h2 class="section-title">Where to Stay</h2>
       <p class="section-subtitle">Nearby hotel recommendations for out-of-town guests</p>
@@ -311,7 +349,7 @@ const heroImage = photos[0];
   </section>
 
   <!-- Gifts Section -->
-  <section id="gifts" class="gifts section">
+  <section id="gifts" class="gifts section section-alt">
     <div class="container-narrow">
       <h2 class="section-title">Gifts</h2>
       <p class="gifts-intro">
@@ -1039,8 +1077,9 @@ const heroImage = photos[0];
     margin-bottom: 0;
   }
 
-  /* === GIFTS SECTION === */
-  .gifts-intro {
+  /* === GIFTS & SHARE SECTIONS === */
+  .gifts-intro,
+  .share-intro {
     font-size: var(--text-base);
     line-height: 1.8;
     text-align: center;
@@ -1048,13 +1087,15 @@ const heroImage = photos[0];
     margin: 0 auto var(--space-2xl);
   }
 
-  .venmo-grid {
+  .venmo-grid,
+  .share-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-xl);
   }
 
-  .venmo-card {
+  .venmo-card,
+  .share-card {
     text-align: center;
     padding: var(--space-xl);
     background-color: var(--color-cream);
@@ -1066,22 +1107,27 @@ const heroImage = photos[0];
     align-items: center;
   }
 
-  .venmo-card .venmo-button {
+  .venmo-card .venmo-button,
+  .share-card .share-button,
+  .share-card .share-tag {
     margin-top: auto;
   }
 
-  .venmo-card--blue {
+  .venmo-card--blue,
+  .share-card--blue {
     border-top-color: var(--color-blue);
   }
 
-  .venmo-icon {
+  .venmo-icon,
+  .share-icon {
     color: var(--color-orange);
     margin: 0 auto var(--space-md);
     display: flex;
     justify-content: center;
   }
 
-  .venmo-card--blue .venmo-icon {
+  .venmo-card--blue .venmo-icon,
+  .share-card--blue .share-icon {
     color: var(--color-blue);
   }
 
@@ -1090,13 +1136,15 @@ const heroImage = photos[0];
     line-height: 1;
   }
 
-  .venmo-title {
+  .venmo-title,
+  .share-title {
     font-size: var(--text-2xl);
     font-weight: 500;
     margin-bottom: var(--space-sm);
   }
 
-  .venmo-desc {
+  .venmo-desc,
+  .share-desc {
     font-size: var(--text-sm);
     color: var(--color-text-light);
     line-height: 1.7;
@@ -1123,7 +1171,8 @@ const heroImage = photos[0];
     margin-bottom: var(--space-sm);
   }
 
-  .venmo-button {
+  .venmo-button,
+  .share-button {
     display: inline-block;
     padding: var(--space-sm) var(--space-xl);
     background-color: var(--color-orange);
@@ -1137,20 +1186,40 @@ const heroImage = photos[0];
     text-transform: uppercase;
   }
 
-  .venmo-button:hover {
+  .venmo-button:hover,
+  .share-button:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
     background-color: var(--color-orange-light);
     color: var(--color-white);
   }
 
-  .venmo-button--blue {
+  .venmo-button--blue,
+  .share-button--blue {
     background-color: var(--color-blue);
   }
 
-  .venmo-button--blue:hover {
+  .venmo-button--blue:hover,
+  .share-button--blue:hover {
     background-color: var(--color-blue-light);
     color: var(--color-white);
+  }
+
+  /* === SHARE SECTION === */
+  .share-card .share-desc {
+    margin-bottom: 0;
+  }
+
+  .share-tag {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-xl);
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-orange);
+    background-color: var(--color-orange-pale);
+    border-radius: var(--border-radius);
+    letter-spacing: 0.02em;
   }
 
   /* === HOTELS SECTION === */
@@ -1327,7 +1396,8 @@ const heroImage = photos[0];
       transform: rotate(90deg);
     }
 
-    .venmo-grid {
+    .venmo-grid,
+    .share-grid {
       grid-template-columns: 1fr;
     }
   }
